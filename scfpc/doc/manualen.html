@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-2">
+  <title>Seksi commander</title>
+</head>
+<body>
+<h1>Seksi Commander dokumentace</h1>
+<h2>Introduction</h2>
+Seksi Commander is a filemanager for X11 and Linux. In this moment is
+only x86 version available. Seksi commander is inspired by mix of Total
+Commander, Midnight Commander and my imagine.
+<h2>Development info</h2>
+<p>Seksi Commander is written in Object Pascal (Kylix and now in FPC+Lazarus).</p>
+<h2>License</h2>
+<p>Program Seksi Commander is released under terms of GNU GPL v 2.</p>
+<p>For internal editor Seksi Commander use SynEdit components,
+which is released under Mozilla Public License or/and GNU GPL 2 (included in Lazarus).</p>
+<p>For integrated viewer I wrote whole new component ViewerControl (mmaped bin, hex, text mode) and
+released under same licence as Seksi Commander (GNU GPL 2).</p>
+<h2>Authors</h2>
+<a href="authors.html">authors and contacts</a><br>
+<h2>Why new commander?</h2>
+Main target is develop file manager for X11 and Linux with this
+features (marked with * is currently not implemented):
+<ul>
+  <li>searching with ALT+letter</li>
+  <li>two panels</li>
+  <li>sort by filename, file extension, file size ...</li>
+  <li>file operation with threads (and in near future at background) -
+file copy, file move, delete</li>
+  <li>work transparently with archives (in this moment only browsing,
+copying, moving and deleting I planed about 5.7.2003)</li>
+  <li>lynx like directory movement</li>
+  <li>integrated editor with syntax hightlighting</li>
+  <li>integrated file viewer (text, hex, bin, graphics)</li>
+  <li>independ to KDE and Gnome</li>
+</ul>
+Other features:<br>
+<ul>
+  <li>icons</li>
+  <li>Multi rename tool</li>
+  <li>selecting files by INS</li>
+  <li>HotDir</li>
+  <li>* FTP</li>
+  <li>can use external editor, viewer or differ</li>
+  <li>Directory history (last 50)</li>
+  <li>Shift+F6 like Total Commander</li>
+  <li>configure operation on file (by definition in sc.ext)</li>
+  <li>colorize items in panels by file ext</li>
+  <li>multi language support (in this moment:)</li>
+  <ul>
+    <li>English</li>
+    <li>Czech</li>
+    <li>Slovak<br>
+    </li>
+  </ul>
+  <li>and many other </li>
+</ul>
+<p>If you need anything else, try to write or write wish to mailing list
+:-).</p>
+<h2>Viewer</h2>
+<p>Integrated File Viewer have this modes: (text, bin, hex, wrapped text,
+processing file).</p>
+<p>Also can directly show this images :JPG, PNG, BMP, ICO, XPM, TGA, VMF.</p>
+<p>If you select more than one file, can browse selected files with keys
+N(ext), P(rior) (like Lister in Total Commander). Switch file showing
+mode with menu or keys 1, 2, 3, 4, (5 is currently disabled).</p>
+<p>Program access files throught mmap (text modes) or for graphics load
+file to memory.</p>
+<h3>Text mode</h3>
+<p>In this mode viewer show file as text. ASCII codes &lt;32 are showed as
+spaces, only ASCII code 9 is replaced by some spaces (by current cursor
+position). Code 10 and code 13 is interpreted as new line. If line is
+too long, program wrap text and continued on next line.</p>
+<h3>Text wrapped text</h3>
+<p>Like text mode, but with wrapping on 80 chars.</p>
+<h3>Mode bin</h3>
+<p>In this mode all codes &lt;32 are replaced with space and wrap text at
+80 chars.</p>
+<h3>Mode hex</h3>
+<p>Show file in hex. Also show ASCII codes in right column.</p>
+<h3>Mode process </h3>
+<p><em>(currenly disabled) Program search in file <strong>sc.ext</strong>
+for View command and display result (result is readed from stdout of
+this command). If View command not found, mode is not changed.</em></p>
+<h2>Editor</h2>
+<p>Integrated editor have keyboard mapping aka Borlands IDE. I use <strong>SynEdit</strong>
+components. This component package is written for Delphi and Kylxi port
+is only few months old. In windows with this components are writen many
+programs (like PSPad, HydraPHP ...).</p>
+<p>If you can other syntax highlighting that includes in editor, must use
+synedit generator (part of synedit package). Generator is based on lex.</p>
+<p>In new version is implemented search and replace (from synedit demos).</p>
+<h2>Multi rename tool</h2>
+<p>This dialog is inspired (but written from scratch) by Total Commander
+and <strong>total</strong> redesigned.</p>
+<h2>Compare files dialog</h2>
+<p>Work in two modes: bin, text. Written in scratch.</p>
+<h2>How can I send bugreport</h2>
+<p>At first moment see <a href="status.html">status</a> if your bug is
+known. For some of bugs (most not my) I implement temporally workaround
+what may not worked at every system (see dead key problem with synedit).</p><p>
+In release version is a bug too if no shortcut (on button, menu ...) or
+any feature is not available without mouse. Program must be controled
+without mouse!</p>
+<p>In development version send only critical error (crash, error messages,
+hang up, strange message and so).</p>
+<p>Send bugs (and wish) to mailing list (in english or in czech) see <a
+ href="authors.html">authors and contacts</a>.</p>
+<h2>How can install Seksi Commander?</h2>
+<p>Exists two ways: compile source or install binary.</p> 
+<p>For binary instalation download file <b>develxxxxx</b>.tgz.
+Where xxxxx is something other than xxxxx :-). develxxxx is development
+package and at this moment not exists any release package.</p><p>Simple unpack
+files from archive where you want and execute <strong>sc</strong>.
+In this development version package is only unpacked to any directory.
+At release version will be changed.</p>
+<h2>Files of Seksi Commander</h2>
+<p>Main program is <b>sc</b>. There is no starting script(!). 
+<p>In <b>lng</b> subdirectory are language files. Seksi commander can use
+any file with lng extension (no other registration is needed).</p>
+<p>In main directory (from version 0.4) exists file <strong>sc.ext</strong> 
+(based on mc.ext). In this file are descripted actions for any extension 
+(for popup menu, execute or viewing ...)</p><p>Definitions of file colors in panel are in 
+<strong>color.ext</strong>, format of file is descripted at begin (very simple).</p>
+<p>In file <strong>pixmaps.txt</strong> are defined pixmaps for files.</p>
+</body>
+</html>

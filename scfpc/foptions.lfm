@@ -1,0 +1,424 @@
+object frmOptions: TfrmOptions
+  ActiveControl = PageControl1
+  Caption = 'Options'
+  ClientHeight = 312
+  ClientWidth = 454
+  Color = clBackground
+  OnCreate = FormCreate
+  TextHeight = 16
+  HorzScrollBar.Page = 455
+  VertScrollBar.Page = 313
+  VertScrollBar.Range = 41
+  Left = 399
+  Height = 312
+  Top = 250
+  Width = 454
+  object PageControl1: TPageControl
+    ActivePage = tsBehav
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 0
+    Height = 272
+    Width = 454
+    object tsLng: TTabSheet
+      Caption = 'Language'
+      ClientHeight = 242
+      ClientWidth = 450
+      Left = 2
+      Height = 242
+      Top = 28
+      Width = 450
+      object lngList: TListBox
+        Align = alClient
+        TabOrder = 0
+        TopIndex = -1
+        Height = 242
+        Width = 450
+      end
+    end
+    object tsBehav: TTabSheet
+      Caption = 'Behaviour'
+      ClientHeight = 242
+      ClientWidth = 450
+      ImageIndex = 1
+      Left = 2
+      Height = 242
+      Top = 28
+      Width = 450
+      object lblTerm: TLabel
+        Caption = 'Terminal:'
+        Left = 8
+        Height = 16
+        Top = 16
+        Width = 50
+      end
+      object edtTerm: TEdit
+        TabOrder = 1
+        Text = '/usr/X11R6/bin/xterm -e bash -i -c %s'
+        TabOrder = 1
+        Left = 96
+        Height = 24
+        Top = 8
+        Width = 313
+      end
+      object gb: TGroupBox
+        ClientHeight = 131
+        ClientWidth = 221
+        ParentColor = True
+        ParentCtl3D = False
+        TabOrder = 2
+        Left = 8
+        Height = 148
+        Top = 80
+        Width = 225
+        object cbDirSelect: TCheckBox
+          AllowGrayed = True
+          AutoSize = True
+          Caption = 'cbDirSelect'
+          DragCursor = 65524
+          TabOrder = 0
+          Left = 8
+          Height = 30
+          Top = -3
+          Width = 209
+        end
+        object cbCaseSensitiveSort: TCheckBox
+          AllowGrayed = True
+          AutoSize = True
+          Caption = 'cbCaseSensitiveSort'
+          DragCursor = 65524
+          TabOrder = 1
+          Left = 8
+          Height = 30
+          Top = 45
+          Width = 209
+        end
+        object cbLynxLike: TCheckBox
+          AllowGrayed = True
+          AutoSize = True
+          Caption = 'cbLynxLike'
+          DragCursor = 65524
+          TabOrder = 2
+          Left = 8
+          Height = 30
+          Top = 21
+          Width = 209
+        end
+        object cbShortFileSizeFormat: TCheckBox
+          AllowGrayed = True
+          AutoSize = True
+          Caption = 'cbShortFileSizeFormat'
+          DragCursor = 65524
+          TabOrder = 3
+          Left = 8
+          Height = 30
+          Top = 69
+          Width = 209
+        end
+        object cbSeparateExt: TCheckBox
+          AllowGrayed = True
+          AutoSize = True
+          Caption = 'cbSeparateExt'
+          DragCursor = 65524
+          TabOrder = 4
+          Left = 8
+          Height = 20
+          Top = 101
+          Width = 204
+        end
+      end
+      object lblRunTerm: TLabel
+        Caption = 'Run terminal:'
+        Left = 8
+        Height = 16
+        Top = 48
+        Width = 72
+      end
+      object edtRunTerm: TEdit
+        TabOrder = 4
+        Text = '/usr/X11R6/bin/xterm'
+        TabOrder = 4
+        Left = 96
+        Height = 24
+        Top = 40
+        Width = 313
+      end
+    end
+    object tsTools: TTabSheet
+      Caption = 'Tools'
+      ClientHeight = 242
+      ClientWidth = 450
+      ImageIndex = 2
+      Left = 2
+      Height = 242
+      Top = 28
+      Width = 450
+      object cbExtEditor: TCheckBox
+        AllowGrayed = True
+        AutoSize = True
+        Caption = 'cbExtEditor'
+        DragCursor = 65524
+        OnClick = cbExtEditorClick
+        TabOrder = 0
+        Left = 8
+        Height = 30
+        Width = 177
+      end
+      object edtExtEditor: TEdit
+        TabOrder = 1
+        Text = 'gEdit "%s"'
+        TabOrder = 1
+        Left = 24
+        Height = 24
+        Top = 32
+        Width = 313
+      end
+      object cbExtDiffer: TCheckBox
+        AllowGrayed = True
+        AutoSize = True
+        Caption = 'cbExtDiffer'
+        DragCursor = 65524
+        OnClick = cbExtDifferClick
+        TabOrder = 2
+        Left = 8
+        Height = 30
+        Top = 56
+        Width = 185
+      end
+      object edtExtDiffer: TEdit
+        TabOrder = 3
+        Text = 'gtk-diff "%s" "%s"'
+        TabOrder = 3
+        Left = 24
+        Height = 24
+        Top = 88
+        Width = 313
+      end
+      object cbExtViewer: TCheckBox
+        AllowGrayed = True
+        AutoSize = True
+        Caption = 'cbExtViewer'
+        DragCursor = 65524
+        OnClick = cbExtViewerClick
+        TabOrder = 4
+        Left = 8
+        Height = 30
+        Top = 120
+        Width = 209
+      end
+      object edtExtViewer: TEdit
+        TabOrder = 5
+        Text = 'emacs "%s"'
+        TabOrder = 5
+        Left = 24
+        Height = 24
+        Top = 152
+        Width = 313
+      end
+    end
+    object tsFonts: TTabSheet
+      Caption = 'Fonts'
+      ClientHeight = 242
+      ClientWidth = 450
+      ImageIndex = 3
+      Left = 2
+      Height = 242
+      Top = 28
+      Width = 450
+      object lblMainFont: TLabel
+        Caption = 'Main font'
+        Height = 15
+        Top = 24
+        Width = 63
+      end
+      object cbMainFont: TComboBox
+        ItemHeight = 18
+        MaxLength = 0
+        OnChange = cbMainFontChange
+        ParentCtl3D = False
+        Style = csDropDownList
+        TabOrder = 1
+        Left = 78
+        Height = 23
+        Top = 16
+        Width = 272
+      end
+      object cbEditorFont: TComboBox
+        ItemHeight = 18
+        MaxLength = 0
+        OnChange = cbEditorFontChange
+        ParentCtl3D = False
+        Style = csDropDownList
+        TabOrder = 2
+        Left = 78
+        Height = 23
+        Top = 87
+        Width = 272
+      end
+      object lblEditorFont: TLabel
+        Caption = 'Editor font'
+        Height = 15
+        Top = 96
+        Width = 67
+      end
+      object edtTest1: TEdit
+        TabOrder = 4
+        Text = 'Quick brown blabla '#27'a'#13'Y~ýá'
+        TabOrder = 4
+        Left = 78
+        Height = 24
+        Top = 48
+        Width = 256
+      end
+      object edtTest2: TEdit
+        TabOrder = 5
+        Text = 'Quick brown blabla '#27'a'#13'Y~ýá'
+        TabOrder = 5
+        Left = 78
+        Height = 24
+        Top = 120
+        Width = 257
+      end
+      object edtTest3: TEdit
+        TabOrder = 6
+        Text = 'Quick brown blabla '#27'a'#13'Y~ýá'
+        TabOrder = 6
+        Left = 78
+        Height = 24
+        Top = 192
+        Width = 257
+      end
+      object cbViewerFont: TComboBox
+        ItemHeight = 18
+        MaxLength = 0
+        OnChange = cbViewerFontChange
+        ParentCtl3D = False
+        Style = csDropDownList
+        TabOrder = 7
+        Left = 78
+        Height = 23
+        Top = 159
+        Width = 272
+      end
+      object lblViewerFont: TLabel
+        Caption = 'Viewer font'
+        Height = 15
+        Top = 168
+        Width = 74
+      end
+      object btnSelMainFnt: TButton
+        Caption = '...'
+        TabOrder = 9
+        OnClick = btnSelMainFntClick
+        Left = 360
+        Height = 23
+        Top = 16
+        Width = 23
+      end
+      object btnSelEditFnt: TButton
+        Caption = '...'
+        TabOrder = 10
+        OnClick = btnSelEditFntClick
+        Left = 360
+        Height = 23
+        Top = 87
+        Width = 23
+      end
+      object btnSelViewFnt: TButton
+        Caption = '...'
+        TabOrder = 11
+        OnClick = btnSelViewFntClick
+        Left = 360
+        Height = 23
+        Top = 159
+        Width = 23
+      end
+      object edtMainSize: TSpinEdit
+        Decimal_Places = 0
+        MaxValue = 25
+        MinValue = 14
+        TabStop = True
+        TabOrder = 12
+        Value = 14
+        Decimal_Places = 0
+        MinValue = 14
+        MaxValue = 25
+        Value = 14
+        Left = 340
+        Height = 23
+        Top = 49
+        Width = 50
+      end
+      object edtEditorSize: TSpinEdit
+        Decimal_Places = 0
+        MaxValue = 25
+        MinValue = 14
+        TabStop = True
+        TabOrder = 13
+        Value = 14
+        Decimal_Places = 0
+        MinValue = 14
+        MaxValue = 25
+        Value = 14
+        Left = 340
+        Height = 23
+        Top = 121
+        Width = 50
+      end
+      object edtViewerSize: TSpinEdit
+        Decimal_Places = 0
+        MaxValue = 25
+        MinValue = 14
+        TabStop = True
+        TabOrder = 14
+        Value = 14
+        Decimal_Places = 0
+        MinValue = 14
+        MaxValue = 25
+        Value = 14
+        Left = 340
+        Height = 23
+        Top = 192
+        Width = 50
+      end
+    end
+  end
+  object Panel1: TPanel
+    Align = alBottom
+    ClientHeight = 40
+    ClientWidth = 454
+    FullRepaint = False
+    TabOrder = 1
+    Height = 40
+    Top = 272
+    Width = 454
+    object btnOK: TBitBtn
+      Kind = bkOK
+      ModalResult = 1
+      OnClick = btnOKClick
+      ModalResult = 1
+      Caption = '&OK'
+      TabOrder = 0
+      OnClick = btnOKClick
+      Left = 280
+      Height = 25
+      Top = 8
+      Width = 75
+    end
+    object btnCancel: TBitBtn
+      Kind = bkCancel
+      ModalResult = 2
+      ModalResult = 2
+      Caption = 'Cancel'
+      TabOrder = 1
+      Left = 368
+      Height = 25
+      Top = 8
+      Width = 75
+    end
+  end
+  object dlgFnt: TFontDialog
+    left = 86
+    top = 23
+  end
+end

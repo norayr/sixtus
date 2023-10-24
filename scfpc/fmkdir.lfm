@@ -1,0 +1,59 @@
+object frmMkDir: TfrmMkDir
+  ActiveControl = edtMkDir
+  Caption = 'frmMkDir'
+  ClientHeight = 91
+  ClientWidth = 336
+  Color = clBackground
+  KeyPreview = True
+  OnKeyPress = FormKeyPress
+  TextHeight = 16
+  HorzScrollBar.Page = 337
+  HorzScrollBar.Range = 329
+  VertScrollBar.Page = 92
+  VertScrollBar.Range = 89
+  Left = 360
+  Height = 91
+  Top = 289
+  Width = 336
+  object edtMkDir: TEdit
+    TabOrder = 0
+    TabOrder = 0
+    Left = 8
+    Height = 24
+    Top = 32
+    Width = 321
+  end
+  object btnOK: TBitBtn
+    Anchors = [akTop, akRight]
+    Kind = bkOK
+    ModalResult = 1
+    Anchors = [akTop, akRight]
+    ModalResult = 1
+    Caption = '&OK'
+    TabOrder = 1
+    Left = 167
+    Height = 23
+    Top = 64
+    Width = 75
+  end
+  object btnCancel: TBitBtn
+    Anchors = [akTop, akRight]
+    Kind = bkCancel
+    ModalResult = 2
+    Anchors = [akTop, akRight]
+    ModalResult = 2
+    Caption = 'Cancel'
+    TabOrder = 2
+    Left = 255
+    Height = 23
+    Top = 64
+    Width = 75
+  end
+  object lblMakeDir: TLabel
+    Caption = 'lblMakeDir'
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 287
+  end
+end

@@ -1,0 +1,71 @@
+object frmFileOp: TfrmFileOp
+  ActiveControl = btnCancel
+  Caption = 'frmFileOp'
+  ClientHeight = 137
+  ClientWidth = 399
+  Color = clBackground
+  TextHeight = 16
+  HorzScrollBar.Page = 400
+  HorzScrollBar.Range = 337
+  VertScrollBar.Page = 138
+  VertScrollBar.Range = 137
+  Left = 306
+  Height = 137
+  Top = 226
+  Width = 399
+  object pbSecond: TProgressBar
+    DragCursor = 65524
+    Max = 100
+    Smooth = True
+    TabOrder = 0
+    BarShowText = True
+    Left = 8
+    Height = 20
+    Top = 72
+    Width = 384
+  end
+  object pbFirst: TProgressBar
+    DragCursor = 65524
+    Max = 100
+    Position = 20
+    Smooth = True
+    TabOrder = 1
+    BarShowText = True
+    Left = 8
+    Height = 20
+    Top = 40
+    Width = 385
+  end
+  object lblFileName: TLabel
+    Caption = 'lblFileName'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'adobe-helvetica'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    Left = 8
+    Height = 16
+    Top = 8
+    Width = 280
+  end
+  object lblEstimated: TLabel
+    Caption = 'lblEstimated'
+    Left = 8
+    Height = 16
+    Top = 104
+    Width = 160
+  end
+  object btnCancel: TBitBtn
+    Kind = bkCancel
+    ModalResult = 2
+    OnClick = btnCancelClick
+    ModalResult = 2
+    Caption = 'Cancel'
+    TabOrder = 2
+    OnClick = btnCancelClick
+    Left = 303
+    Height = 25
+    Top = 104
+    Width = 89
+  end
+end

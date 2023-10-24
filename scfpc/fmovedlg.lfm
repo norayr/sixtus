@@ -1,0 +1,78 @@
+object frmMoveDlg: TfrmMoveDlg
+  ActiveControl = btnOK
+  Caption = 'frmMoveDlg'
+  ClientHeight = 147
+  ClientWidth = 345
+  KeyPreview = True
+  OnKeyPress = frmMoveDlgKeyPress
+  OnShow = frmMoveDlgShow
+  TextHeight = 16
+  HorzScrollBar.Page = 346
+  HorzScrollBar.Range = 337
+  VertScrollBar.Page = 148
+  VertScrollBar.Range = 145
+  Left = 402
+  Height = 147
+  Top = 354
+  Width = 345
+  object btnOK: TBitBtn
+    Anchors = [akTop, akRight]
+    Kind = bkOK
+    ModalResult = 1
+    Anchors = [akTop, akRight]
+    ModalResult = 1
+    Caption = '&OK'
+    TabOrder = 0
+    Left = 170
+    Height = 23
+    Top = 120
+    Width = 75
+  end
+  object btnCancel: TBitBtn
+    Anchors = [akTop, akRight]
+    Kind = bkCancel
+    ModalResult = 2
+    Anchors = [akTop, akRight]
+    ModalResult = 2
+    Caption = 'Cancel'
+    TabOrder = 1
+    Left = 260
+    Height = 23
+    Top = 120
+    Width = 75
+  end
+  object edtDst: TEdit
+    TabOrder = 2
+    Text = 'edtDst'
+    TabOrder = 2
+    Left = 8
+    Height = 24
+    Top = 32
+    Width = 329
+  end
+  object lblMoveSrc: TLabel
+    Caption = 'lblMoveSrc'
+    Left = 8
+    Height = 16
+    Top = 8
+    Width = 272
+  end
+  object lblFileType: TLabel
+    Caption = 'lblFileType'
+    Left = 8
+    Height = 16
+    Top = 64
+    Width = 312
+  end
+  object cmbFileType: TComboBox
+    Enabled = False
+    ItemHeight = 18
+    MaxLength = 0
+    ParentCtl3D = False
+    TabOrder = 5
+    Left = 8
+    Height = 24
+    Top = 88
+    Width = 329
+  end
+end

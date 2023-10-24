@@ -1,0 +1,6 @@
+This is VFS module for Seksi Commander.
+Implementing TAR. Also example of how write
+modules. Use libtester to test module without
+Seksi Commander.
+
+Radek Cervinka

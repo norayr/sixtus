@@ -1,0 +1,50 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFrameFilePanel','FORMDATA',[
+  'TPF0'#15'TFrameFilePanel'#14'FrameFilePanel'#7'Caption'#6#14'FrameFilePanel'
+  +#12'ClientHeight'#3#159#1#11'ClientWidth'#3']'#1#18'HorzScrollBar.Page'#3'^'
+  +#1#18'VertScrollBar.Page'#3#160#1#4'Left'#3#200#1#6'Height'#3#159#1#3'Top'#3
+  +#231#0#5'Width'#3']'#1#0#6'TPanel'#7'pnPanel'#5'Align'#7#8'alClient'#10'Beve'
+  +'lOuter'#7#6'bvNone'#12'ClientHeight'#3#159#1#11'ClientWidth'#3']'#1#11'Full'
+  +'Repaint'#8#8'TabOrder'#2#0#6'Height'#3#159#1#5'Width'#3']'#1#0#6'TLabel'#8
+  +'lblLInfo'#7'Caption'#6#8'lblLInfo'#6'Height'#2#17#5'Width'#2'A'#0#0#6'TPane'
+  +'l'#9'pnlHeader'#5'Align'#7#5'alTop'#10'BevelInner'#7#9'bvLowered'#12'Client'
+  +'Height'#2')'#11'ClientWidth'#3']'#1#11'FullRepaint'#8#8'TabOrder'#2#1#8'OnR'
+  +'esize'#7#15'pnlHeaderResize'#6'Height'#2')'#5'Width'#3']'#1#0#12'TSpeedButt'
+  +'on'#7'btnRoot'#7'Anchors'#11#5'akTop'#0#7'Caption'#6#1'/'#4'Flat'#9#9'NumGl'
+  +'yphs'#2#0#7'OnClick'#7#12'btnRootClick'#4'Left'#3#166#0#6'Height'#2#20#3'To'
+  +'p'#2#20#5'Width'#2#17#0#0#12'TSpeedButton'#7'btnHome'#7'Anchors'#11#5'akTop'
+  +#0#7'Caption'#6#1'~'#4'Flat'#9#9'NumGlyphs'#2#0#7'OnClick'#7#12'btnHomeClick'
+  +#4'Left'#3#166#0#6'Height'#2#20#3'Top'#2#19#5'Width'#2#17#0#0#12'TSpeedButto'
+  +'n'#5'btnUp'#7'Caption'#6#2'..'#4'Flat'#9#9'NumGlyphs'#2#0#7'OnClick'#7#10'b'
+  +'tnUpClick'#4'Left'#3'@'#1#6'Height'#2#20#3'Top'#2#20#5'Width'#2#17#0#0#6'TL'
+  +'abel'#8'lblLPath'#5'Align'#7#5'alTop'#7'Caption'#6#8'lblLPath'#5'Color'#7#12
+  +'clBackground'#4'Left'#2#2#6'Height'#2#17#3'Top'#2#2#5'Width'#3'Y'#1#0#0#6'T'
+  +'Label'#7'lblFree'#5'Align'#7#6'alLeft'#7'Caption'#6#7'lblFree'#4'Left'#2#2#6
+  +'Height'#2#20#3'Top'#2#19#5'Width'#2'A'#0#0#0#5'TEdit'#9'edtRename'#10'OnKey'
+  +'Press'#7#17'edtRenameKeyPress'#8'TabOrder'#2#2#7'Visible'#8#8'TabOrder'#2#2
+  +#6'Height'#2#1#5'Width'#2#1#0#0#9'TDrawGrid'#7'dgPanel'#5'Align'#7#8'alClien'
+  +'t'#11'AutoAdvance'#7#6'aaDown'#5'Color'#7#7'clWhite'#8'ColCount'#2#5#15'Def'
+  +'aultColWidth'#2'@'#14'DefaultDrawing'#8#16'DefaultRowHeight'#2#16#10'FixedC'
+  +'olor'#7#9'clBtnFace'#9'FixedCols'#2#0#9'FixedRows'#2#0#13'GridLineWidth'#2#0
+  +#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzLine'#10'goVertLine'#10'goH'
+  +'orzLine'#11'goColSizing'#11'goRowSelect'#0#8'RowCount'#2#5#10'ScrollBars'#7
+  +#10'ssAutoBoth'#8'TabOrder'#2#4#15'VisibleColCount'#2#5#15'VisibleRowCount'#2
+  +#5#7'OnClick'#7#12'dgPanelClick'#13'OnColRowMoved'#7#18'dgPanelColRowMoved'
+  +#10'OnDblClick'#7#15'dgPanelDblClick'#10'OnDrawCell'#7#15'dgPanelDrawCell'#7
+  +'OnEnter'#7#12'dgPanelEnter'#6'OnExit'#7#11'dgPanelExit'#13'OnHeaderClick'#7
+  +#18'dgPanelHeaderClick'#9'OnKeyDown'#7#14'dgPanelKeyDown'#10'OnKeyPress'#7#15
+  +'dgPanelKeyPress'#15'OnPrepareCanvas'#7#20'dgPanelPrepareCanvas'#6'Height'#3
+  +'X'#1#3'Top'#2')'#5'Width'#3']'#1#9'ColWidths'#1#2'@'#2'@'#2'@'#2'@'#2'@'#0
+  +#10'RowHeights'#1#2#16#2#16#2#16#2#16#2#16#0#0#0#6'TPanel'#11'pnAltSearch'#9
+  +'Alignment'#7#13'taLeftJustify'#7'Caption'#6#6' Find:'#12'ClientHeight'#2#29
+  +#11'ClientWidth'#3#185#0#11'FullRepaint'#8#8'TabOrder'#2#3#7'Visible'#8#4'Le'
+  +'ft'#2#8#6'Height'#2#29#3'Top'#3'P'#1#5'Width'#3#185#0#0#5'TEdit'#8'edSearch'
+  +#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#8'OnChange'#7#14
+  +'edSearchChange'#6'OnExit'#7#12'edSearchExit'#10'OnKeyPress'#7#16'edSearchKe'
+  +'yPress'#8'TabOrder'#2#0#8'TabOrder'#2#0#4'Left'#2'@'#6'Height'#2#24#3'Top'#2
+  +#2#5'Width'#2'v'#0#0#0#6'TPanel'#9'pnlFooter'#5'Align'#7#8'alBottom'#7'Ancho'
+  +'rs'#11#6'akLeft'#7'akRight'#0#7'Caption'#6#9'pnlFooter'#12'ClientHeight'#2
+  +#30#11'ClientWidth'#3']'#1#11'FullRepaint'#8#8'TabOrder'#2#5#7'TabStop'#9#6
+  +'Height'#2#30#3'Top'#3#129#1#5'Width'#3']'#1#0#0#0#0
+]);

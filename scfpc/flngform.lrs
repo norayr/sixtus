@@ -1,0 +1,8 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TfrmLng','FORMDATA',[
+  'TPF0'#7'TfrmLng'#6'frmLng'#7'Caption'#6#6'frmLng'#12'ClientHeight'#3'X'#1#11
+  +'ClientWidth'#3''''#2#5'Color'#7#12'clBackground'#8'OnCreate'#7#10'FormCreat'
+  +'e'#10'TextHeight'#2#16#18'HorzScrollBar.Page'#3'('#2#18'VertScrollBar.Page'
+  +#3'Y'#1#4'Left'#3#192#0#6'Height'#3'X'#1#3'Top'#2'u'#5'Width'#3''''#2#0#0
+]);

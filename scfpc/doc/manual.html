@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+<meta http-equiv="Content-language" content="en" />
+<meta name="author" content="Radek Červinka" />
+<meta name="robots" content="ALL,FOLLOW" />
+<title>Seksi Commander</title>
+<meta name="keywords" content="file manager linux unix free twin panel seksi midnight total windows commander" />
+<meta name="description" content="Seksi Commander homepage" />
+<style media="all" type="text/css">@import "sc.css";</style>
+</head>
+<body>
+<div id="page">
+<h1>Seksi Commander - manual</h1>
+<h2>Contents</h2>
+<ul>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#licence">Licence</a></li>
+<li><a href="#whynew">Why yet another file manager???</a></li>
+<li><a href="#compiling">Compiling from sources</a></li>
+<li><a href="#install">Binary installation</a></li>
+<li><a href="#guide">User's guide</a></li>
+<li><a href="#hotkeys">Shortcuts (hotkeys)</a></li>
+<li><a href="#files">Seksi Commander's files</a></li>
+</ul>
+<h2><a name="intro">Introduction</a></h2>
+<p><strong>Seksi Commander</strong> is a file manager for Linux (with X). It's inspired by Total Commander, Midnight Commander and my imagination.</p>
+<h3>Why Seksi?</h3>
+<p>I <strong>do</strong> know the spelling of the word sexy. But it's pronounced identically and it wouldn't get that high in Google search :-).</p>
+<h2><a name="licence">Licence</a></h2>
+<p>Seksi Commander is released under terms of the GNU GPL v2.</p>
+<p>SC uses SynEdit components for internal editor. They are released under Mozilla Public Licence and/or GNU GPL v2.</p>
+<p>ViewerControl (new component written by me for internal viewer) is released under the same licence as SC (GNU GPL v2)</p>
+<h2><a name="whynew">Why yet another file manager???</a></h2>
+<p>My main target is to develop a file manager for X11 with these features (* denotes unimplemented feature):</p>
+<ul>
+<li>searching with Alt-Letter</li>
+<li>two panels</li>
+<li>sort by filename, file extension, file size...</li>
+<li>file operation with threads (and in near future on background) - file copy, file move, delete</li>
+<li>work transparently with archives (VFS is currently disabled)</li>
+<li>lynx like directory movement</li>
+<li>integrated editor with syntax hightlighting</li>
+<li>integrated file viewer (text, hex, bin, graphics)</li>
+<li>independ to KDE and Gnome</li>
+<li>file icons (depending on the extension)</li>
+<li>Multi rename tool</li>
+<li>HotDir</li>
+<li>* FTP</li>
+<li>can use external editor, viewer or differ</li>
+<li>Directory history (last 50)</li>
+<li>Shift+F6 like in Total Commander</li>
+<li>configurable operation on file (by definition in sc.ext)</li>
+<li>colorize items in panels by file extenstion</li>
+<li>multi language support: english, czech, slovak, polish, russian, lithuanian, spanish</li>
+<li>(*) and many others...</li>
+</ul>
+<h2><a name="compiling">Compiling from sources</a></h2>
+<h3>Prerequisites</h3>
+<p>You need <a href="http://www.freepascal.org/">FreePascal</a> and <a href="http://lazarus.freepascal.org/">Lazarus</a>. I use FPC 1.9.3 (2.0 beta3) and Lazarus from CVS. And of course you won't get far without gtk.</p>
+<p><a href="download.html">Download the sources</a>.</p>
+<p>Install <strong>viewercontrol</strong> (included in the sources) into Lazarus.</p>
+<p>Open <code><strong>sc.lpi</strong></code> or <code><strong>scgtk2.lpi</strong></code>. In the latter case you need gtk2forpascal (available at <a href="http://www.sourceforge.net/">SourceForge</a>). <strong>Warning:</strong> gtk2 version of Seksi Commander doesn't work properly (editor crashes and movement in panels is slow).</p>
+<p>Compile.</p>
+<h3>Why Lazarus and FreePascal?</h3>
+<p><a href="http://www.lazarus.freepascal.org/modules.php?op=modload&amp;name=StaticPage&amp;file=index&amp;sURL=about">Learn more about Lazarus</a>.</p>
+<p>It's multi-platform, free (open source), there is no need of additional shared objects, you can use gtk...</p>
+<h2><a name="install">Binary installation</a></h2>
+<p>Quite straightforward: <a href="download.html">Download the binary package</a>. Unpack anywhere. <code>cd</code> to that directory and run with <code><strong>./sc</strong></code>. (Quite dirty way, but it works... Hope it will be changed in the release version. --ed) (You need gtk to run SC.)</p>
+<h2><a name="guide">User's guide</a></h2>
+<h3>Main commander window</h3>
+<p>Has to be written yet. Anyone with enough time to describe all actions? --ed</p>
+<p>Generally most of the items are quite intuitive. Try and see.</p>
+<h3>Internal viewer</h3>
+<p>Viewer has these modes:</p>
+<h4>Text mode (number 1)</h4>
+<p>Viewer displays file as plain text. All characters with ASCII value less than 32 are shown as spaces (except the TAB character (ASCII value 9) which is represented as several spaces). Characters #10 and #13 are interpreted as the end of line. If a line is too long (300 characters) it's wrapped.</p>
+<h4>Binary mode (number 2)</h4>
+<p>All characters &lt; #32 are converted to spaces. Lines are wrapped at 80th column.</p>
+<h4>Hexadecimal mode (number 3)</h4>
+<p>Displays two columns: in the left one hexadecimal values of characters are shown (along with position in file), in the right one textual interpretation is displayed.</p>
+<h4>Wrapped text mode (number 4)</h4>
+<p>Applies the same rules as in text mode except the lines are wrapped at 80th column.</p>
+<h4>Processed mode (number 5)</h4>
+<p>Applies an external program to the file and displays it's output. Disabled.</p>
+<h4>Graphics mode (number 6)</h4>
+<p>Shows file as a picture. Can display jpg, png, bmp, ico, xpm, tga, vmf. You can stretch the image so that it fits in the window.</p>
+<p>If more than one file are selected you can cycle between them with n(ext)/p(revious) keys.</p>
+<h3>Internal editor</h3>
+<p>Has to be written yet. Help welcome.</p>
+<h2><a name="hotkeys">Shortcuts (hotkeys)</a></h2>
+<p>Shortcuts are in <a href="keys.txt">separate file</a>.</p>
+<h2><a name="files">Seksi Commander's files</a></h2>
+<p>Main executable: <code>sc</code><br />
+Language files: <code>lng/*.lng</code><br />
+Extension definition file: <code>sc.ext</code> (here you can define actions depending on the file extension)<br />
+Color definition file: <code>color.ext</code> (here you can define which file types are shown with which color)<br />
+Pixmaps definition file: <code>pixmaps.txt</code> (here you can define icons for files)<br />
+Pixmaps: <code>pixmap/*</code></p>
+
+
+</div>
+</body>
+</html>

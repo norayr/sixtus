@@ -1,0 +1,7 @@
+
+unzip sc.zip
+unzip laztel.zip 
+ps -x
+mozilla
+ls
+mc

@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-2">
+  <title>Seksi commander</title>
+</head>
+  <body>
+ 
+<h1><a name="mozTocId207002" class="mozTocH1"></a>Seksi Commander - technická
+dokumentace<!--mozToc h1 1 h2 2 h3 3 h4 4--><br>
+ </h1>
+ 
+<ul id="mozToc">
+   <a href="#mozTocId831747">Úvod a překlad </a><br>
+   <a href="#mozTocId716471">Doporučený styl (Štábní kultura)</a>   
+  <ul>
+     <li><a href="#mozTocId886065">Volba názvů proměnných</a></li>
+     <li><a href="#mozTocId135508">Volba názvů souborů</a></li>
+     <li><a href="#mozTocId190975">Volba názvů konstant</a></li>
+     <li><a href="#mozTocId29864">Volba názvů globálních proměnných</a></li>
+     <li><a href="#mozTocId156730">Styl kodování</a></li>
+   
+  </ul>
+   <a href="#mozTocId643223">Lokalizace </a>   
+  <ul>
+     <li><a href="#mozTocId702853">Lokalizace formulářů </a></li>
+     <li><a href="#mozTocId969999">Lokalizované zprávy </a></li>
+   
+  </ul>
+   <a href="#mozTocId336128">Práce s archívy</a><br>
+   <a href="#mozTocId648487">Portace</a>   
+  <ul>
+     <li><a href="#mozTocId994230">Windows</a></li>
+     <li><a href="#mozTocId60923">Lazarus</a></li>
+   
+  </ul>
+ 
+</ul>
+ 
+<h2><a name="mozTocId831747" class="mozTocH2"></a>Úvod a překlad<br>
+ </h2>
+Seksi Commander je napsán v Object Pascalu pod Kylixem a výsledkem je nativní
+32 bit ELF aplikace nezávislá na KDE, GNOME. Pro zobrazování používá upravenou
+knihovnu QT od Borlandů a tudíž je zaručena stejná funkčnost.<br>
+Program se musí dát přeložit pod Kylix 3 Open Edition. Pro správný překlad 
+editoru z GUI musí být nainstalované komponenty synedit (a to z CSV ze sourceforge
+nebo ty co jsem dal ke stažení)
+a pro překlad Vieweru z GUI moje komponenta QViewerControl (součástí zdrojových
+textů).<br>
+ Pro překlad pomocí dcc32 si myslím, že by stačilo přidat cesty ke zdrojákům
+uvedených komponent (nezkoušel jsem).<br>
+ Jinak kompletní build, včetně SynEditu má asi 77000 řádku za 3 sekundy na mém Duronu
+650 se 128 MB a Gnome. Normální kompilace a spuštění asi tak sekundu :-).<br>
+<br>
+ 
+<h2><a name="mozTocId716471" class="mozTocH2"></a>Doporučený styl (Štábní
+kultura)</h2>
+ 
+<h3><a name="mozTocId886065" class="mozTocH3"></a>Volba názvů proměnných</h3>
+ Proměnné jsou pojmenovávány pokud možno logicky a v souladu s jejich určením.
+Pro lokální proměnné je možno použít i jednopísmenné pojmenování jako i,
+j, nebo obecné názvy jako temp. Ve většině případů je doporučeno používat
+prefixy indikující typ proměnné, viz. tabulka.<br>
+ <br>
+ 
+<table cellpadding="2" cellspacing="2" border="1" style="text-align: left; width: 100%;">
+   <tbody>
+     <tr>
+       <td style="vertical-align: top; font-weight: bold;">Typ proměnné<br>
+       </td>
+       <td style="vertical-align: top; font-weight: bold;">Prefix<br>
+       </td>
+       <td style="vertical-align: top; font-weight: bold;">Příklad<br>
+       </td>
+     </tr>
+     <tr>
+       <td style="vertical-align: top;">stringové typy<br>
+       </td>
+       <td style="vertical-align: top;">s<br>
+       </td>
+       <td style="vertical-align: top;"><tt>sPath</tt><br>
+       </td>
+     </tr>
+     <tr>
+       <td style="vertical-align: top;">Celočíselné typy<br>
+       </td>
+       <td style="vertical-align: top;">i<br>
+       </td>
+       <td style="vertical-align: top;"><tt>iCount</tt><br>
+       </td>
+     </tr>
+     <tr>
+       <td style="vertical-align: top;">Boolean<br>
+       </td>
+       <td style="vertical-align: top;">b<br>
+       </td>
+       <td style="vertical-align: top;"><tt>bChecked</tt><br>
+       </td>
+     </tr>
+     <tr>
+       <td style="vertical-align: top;">typové proměnné a třídy<br>
+       </td>
+       <td style="vertical-align: top;">T<br>
+       </td>
+       <td style="vertical-align: top;"><tt>TTable</tt><br>
+       </td>
+     </tr>
+     <tr>
+       <td style="vertical-align: top;">výčty<br>
+       </td>
+       <td style="vertical-align: top;">kombinace jména typu a hodnoty</td>
+       <td style="vertical-align: top;"><tt>Type TColor=(clRed, clGreen)</tt></td>
+     </tr>
+     <tr>
+       <td style="vertical-align: top;">pointery<br>
+       </td>
+       <td style="vertical-align: top;">P<br>
+       </td>
+       <td style="vertical-align: top;"><tt>PData</tt> (např. <tt>Type PData=^TData</tt>
+)<br>
+       </td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<h3><a name="mozTocId135508" class="mozTocH3"></a>Volba názvů souborů</h3>
+ 
+<table cellpadding="2" cellspacing="2" border="1" style="text-align: left; width: 100%;">
+   <tbody>
+     <tr>
+       <td style="vertical-align: top;">Formuláře<br>
+       </td>
+       <td style="vertical-align: top;">frmXXX v souboru fXXX.pas<br>
+       </td>
+       <td style="vertical-align: top;">frmCopyDlg v souboru fCopyDlg.pas<br>
+       </td>
+     </tr>
+     <tr>
+       <td style="vertical-align: top;">Unity<br>
+       </td>
+       <td style="vertical-align: top;">uXXX.pas<br>
+       </td>
+       <td style="vertical-align: top;">uFileCopy.pas<br>
+       </td>
+     </tr>
+     <tr>
+       <td style="vertical-align: top;">Data moduly<br>
+       </td>
+       <td style="vertical-align: top;">dmXXX v souboru dXXX.pas<br>
+       </td>
+       <td style="vertical-align: top;">dmDialogs v souboru dDialogs.pas<br>
+       </td>
+     </tr>
+     <tr>
+       <td style="vertical-align: top;"><br>
+       </td>
+       <td style="vertical-align: top;"><br>
+       </td>
+       <td style="vertical-align: top;"><br>
+       </td>
+     </tr>
+   
+  </tbody> 
+</table>
+ <br>
+ 
+<h3><a name="mozTocId190975" class="mozTocH3"></a>Volba názvů konstant</h3>
+ Konstanty začínají písmenem c a pak je zkratka funkce a zkratka významu.
+Např. <tt>cLngMsgErrCpFile=10</tt>.<br>
+ 
+<h3><a name="mozTocId29864" class="mozTocH3"></a>Volba názvů globálních proměnných</h3>
+ Konstanty začínají písmenem g a pak je zkratka funkce a zkratka významu.
+Např. <tt>gLynxLike:=False;</tt><br>
+ 
+<h3><a name="mozTocId156730" class="mozTocH3"></a>Styl kodování</h3>
+ Je preferován objektový přístup (třídy a objekty), ale v některých případech
+je výhodnější použít čistě neobjektový kód a pak je to samozřejmě možné.
+Pokud existuje skupina funkcí, které si navzájem předávají několik parametrů,
+měli by být nahrazeny třídou a jejími metodami.<br>
+ <br>
+ Místo volání Free používat konstrukci <br>
+ 
+<pre>  if assigned(objekt) Then <br>    FreeAndNil(objekt)<br></pre>
+ Nekompromisně používat vyjímky. Snažit se pro akci, která může být vyvolána
+z několika míst (např. menu, popupmenu, toolbar) používat ActionListy.<br>
+ 
+<pre>objekt:=TTrida.Create;<br>try<br>  // nejake akce s objekt <br>finally<br>  if assigned(objekt) Then <br>    FreeAndNil(objekt)<br>end;<br></pre>
+ nebo 
+<pre>otevři soubor<br>try<br>  operace se souborem<br>finally<br>  zavři soubor<br>end;<br></pre>
+ Zaroveň je ve vhodných okamžicích dobré přemýšlet o try...except..end. V
+tom případě zpracovat jen ten druh vyjímky, ostatní publikovat výše pomocí
+Raise.<br>
+ <br>
+ <span style="font-weight: bold;">Jiné:</span> Zarovnává se na dva znaky, 
+pokud je tělo funkce delší než nějakých 15-20 řádků (ale i méně nebo více),
+je vhodné přemýšlet o rozdělení do více funkcí.<br>
+ Snažit se psát kód přímočaře a využívat vyjímky. Nezapomenout že pokud zavoláme
+<tt>Exit</tt> v bloku <tt>try..finally</tt>, tak se provede část <tt>finally</tt>
+.<br>
+ 
+<pre>function BlaBle(const sFileName:String):String;<br>begin<br>  Result:='';<br>  if sFileName='' then Exit;<br>  if ExtractFileName(sFileName)&lt;&gt;'.bla' then<br>    Result:='ble'<br>  else<br>    Result:='bla';<br>end;<br></pre>
+ Kde se předávají konstatní parametry, tam je specifikujte pomocí <tt>const.</tt><br>
+ Program se musí dát ovládat pouze z klávesnice.<br>
+ <h2>Vytváření formulářů</h2>
+ Všechny formuláře musí být vytvářeny až za běhu (vyjímku tvoří frmMain a datavé moduly).<br>
+ Osvědčilo se mi přidat k formuláři funkci, která má parametry nutné pro předání dat
+ formuláři (např. seznam souborů pro Viewer) a která je volána z nadřízeného formuláře.<br>
+ např:
+ <pre>
+ function ShowEditForm(const sFileName:String):boolean;
+ begin
+   with TfrmEditor.Create(Application) do
+   begin
+     try
+// zde je jiz formulář vytvořen a jeho vlastníkem je objekt Application
+// tudíž zde si můžeme s ním dělat co chceme, předat data apod.
+       if ShowModal=mrOK then
+       begin
+         // ha, user stisknul OK tlačítko, co s tím uděláme?
+       
+       end
+       else
+       begin
+         // stisknul něco jiného
+
+       end;
+{ je použita try.. finally, protože ať už v případě jakékoliv vyjímky, nebo
+ v případě normálního běhu se část finally provede a formulář je uvolněn z paměti}
+     finally
+       Free;
+     end;
+   end;
+ end;
+ </pre>
+<h2>Jak je možné, že si dovolím po chybě pokračovat?</h2>
+Pokud se vám povede dostat program do úzkých je možné, že se zobrazí informace
+o tom, že došlo k chybě, ale přesto se program většinou zbrchá, nebo se zbrchá
+natolik, že se dá ukončit. Je to možné pomocí důsledného používání vyjímek
+a jednoduchého fíglu. Úplně na začátku programu je v běhové knihovně zažádáno
+o alokaci nulté stránky virtuální paměti procesu (mmap) a tato je označena jako
+nedostupná (resp. nedá se z ní číst, zapisovat atd.). Většina problémů s
+tí, že program šahá kam nemá je způsobena tím, že není inicializován pointer
+(a co je jiného objekt než pointer?), tudíž když se náhodou stane, že zapomenu
+inicializovat objekt, tak je velká pravděpodobnost, že se šáhne do zakázané
+oblasti (většinou díky tomu, že obsahuje buď nil (NULL v C) nebo nějaké malé
+číslo), běhová knihovna signál odchytí, transformuje na vyjímku, kterou buďto
+zachytí nekterá z mojich obsluh, nebo v nejhoprším případě globální ovladač
+vyjímek. Mechanismus je samozřejmě složitější a vstupuje do něj i navíc sekce
+finally atd.<br>
+Abych se přiznal, tak je jedna část kódu která může způsobit problémy. Jedná
+se o vykreslování panelu, nebo o vykreslování textové části Vieweru. Vykreslení
+je zavoláno pokud je to třeba, tj. např.
+pokud bylo zavřeno dialogové okno před ním. No a to je ten zakopanej pes.
+Pokud to diloagové okno ukazovalo chybu, která vznikla při vykreslovaní panelu,
+tak je průšvih. Následuje opětovná chyba atd. a program se musí (s)prostě odstřelit.
+Budu se toto snažit minimalizavat (konstrukce <TT>if assigned(objekt) then </TT>,
+kde to assigned je optimalizovanou variantou objekt=nil.<br>
+Samozřejmě pokud naleznete opakující se chybu, je dobré nám napsat a tam
+samozřejmě pospat jak se dá vyvolat, popřípadě screenshot pomůže (co nejmenší velikost).
+<h2><a name="mozTocId643223" class="mozTocH3"></a>Lokalizace<br></h2>
+ Všechny řetězce (v současnosti to nejsou úplně všechny) by měly být lokalizovány.
+Mechanismus je jednoduchý. Existují soubory *.lng, které obsahují všechny
+texty s jedinečným číselným identifikátorem. Pokud se přidá další, je to
+rozpoznáno a v konfiguraci se dá jazyk zvolit. Následně v unitu <b>uLng</b> je dostupná
+funkce <br>
+ <tt>function lngGetString (id:Integer):String;</tt><br>
+ která pro identifikátor vrátí řetězec v nastaveném jazyku. Zároveň jsou zde
+definovány konstanty jednotlivých textů. Vždy se musí definovat konstanta
+a nevolat uvedenou funkci s "tvrdou" hodnotou (i když by to teoreticky šlo, ale byl by v tom
+ehm nepořádek). Nezapomenout, že program se musí dát ovládat pouze z klávesnice, tj. &amp; značí shortcut,
+i když to např. v menu zapomenete, bude to automaticky doplněno, ale není to košer.<br>
+ 
+<h3><a name="mozTocId702853" class="mozTocH4"></a>Lokalizace formulářů<br>
+ </h3>
+ Pokud se jedná o lokalizaci formulářů, jsou všechny formuláře následníkem
+<tt>TFrmLng</tt> umístěného ve fLngForm.pas. Zatím tento formulář pouze definuje
+abstraktní funkci <tt>procedure LoadLng; virtual; abstract;</tt> která je
+zavolána při vytvoření formuláře, musí být v následníku předefinována a slouží
+pro lokalizaci prvků ve formuláři, pro to jak nahlédněte do zdrojáků.<br>
+ 
+<h3><a name="mozTocId969999" class="mozTocH4"></a>Lokalizované zprávy<br>
+ </h3>
+ Pro zabrazení hlášek používejte <tt>uShowMsg.pas</tt> v kombinaci s výše
+uvedeným mechanismem. Je zde definováno několik obvyklých typů zpráv <tt>
+(MsgOK, MsgError)</tt> a taky obecná <tt>MsgBox</tt>, která může zobrazit
+libovolný počet tlačítek (předdefinované jsou snad všechny možné, ale dají
+se doplnit (nezapomenout přidat popisy i do souborů lng).<br>
+ 
+<h2><a name="mozTocId336128" class="mozTocH2"></a>Práce s archívy</h2>
+ V současnosti SeksiCmd používá na archívy externí skripty, v budoucnosti
+uvažuji i o pluginech (šlo by to pak psát i v C). Jako základ jsou skripty
+z mc. Pouze přístup k nim je trošičku jiný. Volání skriptu probíhá na základě
+koncovky souboru, tj. zatím fungují pouze takovéto skripty (zip, rpm, deb...).
+Přiřazení souborů ke koncovkám je v souboru vfs/vfsini.ini.<br>
+ <br>
+ 
+<h2><a name="mozTocId648487" class="mozTocH3"></a>Portace</h2>
+ Předem musím říct, že já sám zatím o portaci neuvažuji. Ale jelikož jsou
+zdrojové kódy pod GPL, tak se tomu může zkusit věnovat někdo jiný.<br>
+ 
+<h3><a name="mozTocId994230" class="mozTocH4"></a>Windows</h3>
+ SeksiCmd je psán speciálně pro Linux a jako takový využívá některé jeho vlastnosti.
+Týká se to hlavně práce se soubory a s filesystemem. Pro některé věci (jako
+mmap) existují ekvivalenty, pro jiné ne a ani to nebude potřeba (chown atd.).
+Někde se bude muset něco přidat (práce s disky).<br>
+ Pro překlad bude asi nutné Delphi 6 a vyšší pokud by to měla zůstat CLX aplikace
+(snažší cesta).<br>
+ Pokud by byl port úplný, tak se musí nahradit všechny Qt na nativní windows
+prvky a muselo by se upravit část UI (V tomto případě by stačilo Delphi 5,
+protože program využívá <tt>TFrame</tt> pro panely).<br>
+ Každopádně se musí přeportovat moje komponenta <tt>QViewerControl</tt>, která
+se stará o textovou část Vieweru. Ale nemělo by to být nic těžkého (až na
+to že to používá <tt>mmap</tt> souboru :-P ).<br>
+ 
+<h3><a name="mozTocId60923" class="mozTocH4"></a>Lazarus</h3>
+ Lazarus je klon Kylixe (<a href="http://lazarus.freepascal.org/">lazarus.freepascal.org</a>
+). Používá freepascal (není to frontend ke gcc a podporuje více architektur).
+V současné době prý je docela schopný (lazarus). Lazurus je postaven na gtk+
+a tudíž by ten přepis musel být brutálnější (hlavně okolí GUI) a nevím jak
+moc je kompatibilní jeho knihovna.<br>
+ <br>
+ <br>
+ 
+</body>
+</html>

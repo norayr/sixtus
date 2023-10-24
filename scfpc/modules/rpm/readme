@@ -1,0 +1,5 @@
+This is VFS module for Seksi Commander.
+Implementing RPM. Use libtester to test module without
+Seksi Commander.
+
+Radek Cervinka

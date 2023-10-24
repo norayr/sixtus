@@ -1,0 +1,14 @@
+object frmLng: TfrmLng
+  Caption = 'frmLng'
+  ClientHeight = 344
+  ClientWidth = 551
+  Color = clBackground
+  OnCreate = FormCreate
+  TextHeight = 16
+  HorzScrollBar.Page = 552
+  VertScrollBar.Page = 345
+  Left = 192
+  Height = 344
+  Top = 117
+  Width = 551
+end

@@ -1,0 +1,216 @@
+Legend:
+--------
++ added
+= bug correction
+- removed
+? in progress
+! know bug
+
++ version 0.6 beta1
+
++ compiled with FPC 1.9.4 (from 3.6.2004)
++ compiled with lazarus CVS (from 3.6.2004)
+
+
++ tab support (CTRL+T, CTRL+W) (GOOOOOOOOOD!)
+= run terminal is now CTRL+X
+= loading lng files :(
++ (partially) BIG file support
+= on big filesystems (2G+) is now correctly displayed space
+= much much much faster (than light)
+= some VFS code cleanup
+= date in panel is correct now
+= more portable (removed many libc calls (but not all :( ) and replaced by fpc natives)
+? changed way to execute command
+
+
+----------------------------------------------------------------------
++ version 0.6 alfa2
+
+= fixed problem with latest lazarus CVS (removed workaround for OnExit) event (i hope)
++ add Shift +, - (on numeric keyboard) - (un)tag all files in directory with same extension as selected file
++ implemented internal "cd" command
++ save and restore position of main window, columns (automatic), viewer (in menu), editor (automatic)
+= fixed problem with directory with +x -r mode
++ add some translation
+= partially fixed problem with font in text compare
+= fixed problem (add workaround) with copying from viewer to editor in special case
+  (need update viewer component if compile Seksi Commander)
+= clean up
+? BIG file support (files >2GB not showed in panel)
+! sometimes in menu assertion failed in gtk (gtk or LCL bug)
+
+--------------------------------------------------------
++ version 0.6 alfa (This is really alfa version!!!, please report problems) :( !!!!)
+
++ ported to FPC (kylix is no longer supported)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
++ so program uses gtk and selected gtk schema (see screen shots)
++ add compare files for text files (WOW)
++ some parts are rewrited 
++ fully configurable icons support (WOW)
++ in configuration can select display filenames with extension
+= dead keys in editor worked (thanks Marc from Lazarus team)
++ multiple viewer and integrated editor instances (WOW)
+= counting filesize with space work better
+- disable VFS (temporally)
+- same hotkeys are disabled (temporally)
+- and many other (...)
+
+--------------------------------------------------------
++ version 0.5a
+= right mouse click on file now working 
++ plugins for tar, rpm, gz, bzip (RC)
+= now modules are stored in modules/bin subdir (in future release stored in /usr/lib/seksicmd/)
+= updated about box :) (RC)
+- removed cache (new plugin interface) (RC)
+= in spliter change 1000 (kilo) by 1024 ... (RC)
++ "spliter" and "linker" by Pavel Letko (see menu file)
+= temporally changed ExecCmdFork :(, I am crazy with fork (RC)
+--
+= in panel is format of size defined by configuration
+= fixed crash with multirename on .. (other dialogs protected too).
+= fixed left, right cursor problem (lynx like mode). (Draw grid problem).
+= fixed updating panel after click on column header
+= fixed sorting problem with directory (and sort by size, attr, date) 
+= fixed cursor movement after +,-
++ TFileList have iOwner, iGroup (xmat)
+= fixed some mouse cursors (show wait cursor) (jkarasek)
+= fixed problem with cursor in change dir (deep) (jkarasek)
++ File Properties dialog - fixed his bug s GID, UID (jkarasek)
++ added chgrp a chown dialog (xmat at volny.cz)
+= fixed scrollbar in Viewer and text mode (thanks psonek at email.cz)
+= fixed some viewer problems with scrolling text (thanks psonek at email.cz)
+= fixed grid row width (RC)
+
+-----------
+RC
++ version 0.5 :)
++ updated about box
++ F2 focus to command line
+= fixed problem with key up (down) in command line
++ filesizes are drawed with spaced (1 234 456)
++ space select directory
++ try to fix problem with different XServer DPI (report please)
++ 3 buttons (home, root, up dir) at right corner in both panels
++ filepath (in panel) is clicable and invoke dirhistory (like ctrl+F12)
++ FindFileDialog: FileMask focused at form create
++ commands from command line or Shift+Enter
+  are executed with |less
+
+- replaced TListView by DrawGrid and Header control
+
+
+=  +/- and  *.* not select '..'
++ F3 on directory like mc (.. > up directory, else go deeper)
++ at counting filesize(s) of directory(s) wait curson is showed.
+= Fixed problem width Shift+F4,SHift+F5, Shift+F6 on some systems
++ Ctrl+Q - Terminate Seksi Commander
+
+------------------------------------------
+RC:
+= fixed invoking main menu with ALT key (i hope).
+= uFilePanel.pas - GetActiveItem: if selected=nil, try to get focused item, else ABORT
++ in viewer now possible process file (try zip, html, rpm ...) and
+  result show in hex, bin...
++ in viewer now possible show images in text representation like other files
+  (before only as image)
++ in Viewer selection with mouse and CopyToClipboard;
+  flicker, but working (in hex mode currently maybe bad)
+  btw: selected text with mouse is coped to clipboard (I like this feature:)
++ in Viewer added vertical scrollbar
+= in shift+F6 correction position of edit box (with too big or too small
+  font) - used workaround (bug in qt, grrrrrrrrr)
+
+
+= Directory size is showed in size column (aligned to right).
+= If pressed Space key, message box is not showed (use CTRL+ENTER)
++ In File menu working "count space". The same is Ctrl+Enter
+= error is showed if new directory exists in makedir(F7).
+= Corrected font: label path next to command line
++ Ctrl+right & Ctrl+left reload second panel with currently selected dir
+  (and for '..' too).
++ Ctrl+Shift+Enter is like CTRL+P and ALT+ENTER.
+
+
+--------------------------------------------------------------
+1.6.2003
+  * version 0.45
+  * font configuration (test please)
+  * in editor Ctrl+S is like F2 (Save file)
+  * Shift+F6 on one file or one dir execute "inline" rename like Total Commander
+  * in root directory ".." is not showed
+  * CTRL+PgDown, CTRL+PgUp like left and right in lynx like style
+  * if pressed Space key on dir, size of dir is showed in "Ext" column
+  * add color.ext (colorize items in panels by file ext) - NO GUI available (never, edit color.ext)
+  * pressing ALT (without any key activate menu)
+  * add CTRL+T to run Terminal
+  * add run term edit box to Options
+  * add search and replace in internal editor (both boxes are stored on disk)
+  * command line in main window is stored to disk
+  * invoke command line history by CTRL+down or CTRL+F8
+  * CTRL+F12 invoke DirHistory popup menu (saved between sessions) (last 50 dirs)
+  * fixed Shift+F5 bug with bad text value
+  * lokalization Shift+F4
+--------------------------------------------------------------
+
+19.6. - 24.6 (RC)
+  * version 0.4
+  * Shift+F5
+  * Shift+F6
+  * Shift+F4
+  * add sc.ext, where is possible configure behaviour on file
+    (determined by his ext: example for avi call mplayer),
+    also it's posible call editor or viewer (specified in configuration
+    dialog), or execute command in terminal (see mplayer).
+    sc.ext is based on mc.ext file
+    And at last all commands for file (yes can be many) showed in popup
+    menu with two default (EDIT (=F4) and VIEW (=F3)
+  * in Viewer new command 5
+  * now is possible ALT+BACKSPACE in quick search
+  * add slovak.lng file       (kdo??????)
+  * corrected english lng file (kdo??????)
+
+  * english manual (not very good english but better than nothing)
+  * new logo
+- bug fixes
+  * fixed bug in quick search for numbers
+  * in move thread test if file exists and show confirmation dialog
+    (like copy)
+  * QViewerControl, after open file, set position to 0 (dangerous
+    only multiple files)
+  * clean up, add header with licence to many files
+  * add uExts.pas (storing commands by  file extension from sc.ext)
+  * browsing directories with keyboard: show hourglass cursor on
+    panel reading
+  * copythread and movethread: is possible input any paths in dialog windows
+    (all paths are created at thread)
+  * quick search panel have better place (determined by window size)
+  * all windows are showed on screen center
+  * fixed viewer in text mode (max of chars in unwrapped text > fixing problem in Xlib)
+  * registering .jpeg file to viewer (before only .jpg available)
+  and some fixes
+--------------------------------------------------------------
+17.6. (RC)
+- main changes:
+ * QViewerControl
+   - possible error in mapfile fixed
+   - writetext TABs fixed (tab is replaced by 9 spaces)
+   - set correct position for modes hex, bin (SetPosition)
+ * framepanel
+   - searching with ALT is case unsensitive
+   - executables is painted with underline
+ * uCopyThread
+   - fixed stupid bug with chmod, chgrp (swap sDst and sSrc :( )
+ * Added uPathHistory (now used for archive support, in future to archive in archive and FTP)
+ * uTypes - add Type TPanelMode= (pmDirectory, pmArchive, pmFTP) - prepare to FTP
+ + uFilePanel - prepare for FTP, clean up
+ + uFindThread - clean up, maybe solved problems with symlinks
+ + global - fixed some symlink problems (not all, but work)
+18.6. (RC)
+ + definitive fixed problems with symlinks (in search and browsing directory) (i hope)
+ + changed drawing in TreeView, now executables files are bold and underline
+ + archive in archive support (only for browsing)
+ + better handling of dirs in archive(RPM) - (but still not OK)
+ + in uCopyThread is source file opened ReadOnly 
+ + uGlobalPath - better paths support
+  

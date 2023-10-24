@@ -1,0 +1,253 @@
+object frmFindDlg: TfrmFindDlg
+  ActiveControl = pgcSearch
+  Caption = 'frmFindDlg'
+  ClientHeight = 513
+  ClientWidth = 495
+  Color = clBackground
+  KeyPreview = True
+  OnClose = frmFindDlgClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  OnShow = frmFindDlgShow
+  TextHeight = 16
+  HorzScrollBar.Page = 496
+  VertScrollBar.Page = 514
+  VertScrollBar.Range = 316
+  Left = 336
+  Height = 513
+  Top = 168
+  Width = 495
+  object Splitter1: TSplitter
+    Align = alTop
+    Cursor = 65521
+    Height = 1
+    ParentColor = True
+    ResizeStyle = rsUpdate
+    Width = 495
+    Cursor = 65521
+    Height = 1
+    Width = 495
+  end
+  object Panel2: TPanel
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 313
+    ClientWidth = 495
+    FullRepaint = False
+    TabOrder = 0
+    Height = 313
+    Top = 1
+    Width = 495
+    object pgcSearch: TPageControl
+      ActivePage = tsStandard
+      Align = alClient
+      Anchors = [akTop, akLeft, akRight]
+      TabIndex = 0
+      TabOrder = 0
+      Height = 313
+      Width = 495
+      object tsStandard: TTabSheet
+        Caption = 'Standard'
+        ClientHeight = 283
+        ClientWidth = 491
+        Left = 2
+        Height = 283
+        Top = 28
+        Width = 491
+        object lblFindPathStart: TLabel
+          Caption = 'FileDir'
+          Height = 16
+          Top = 8
+          Width = 382
+        end
+        object edtFindPathStart: TEdit
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 1
+          TabOrder = 1
+          Height = 24
+          Top = 32
+          Width = 286
+        end
+        object btnSelDir: TButton
+          Anchors = [akTop, akRight]
+          Caption = '...'
+          TabOrder = 2
+          OnClick = btnSelDirClick
+          Left = 288
+          Height = 25
+          Top = 32
+          Width = 25
+        end
+        object lblFindFileMask: TLabel
+          Caption = 'FileMask'
+          Height = 16
+          Top = 64
+          Width = 51
+        end
+        object cmbFindFileMask: TComboBox
+          Anchors = [akTop, akLeft, akRight]
+          ItemHeight = 18
+          MaxLength = 0
+          ParentCtl3D = False
+          TabOrder = 4
+          Text = '*'
+          Height = 24
+          Top = 88
+          Width = 310
+        end
+        object cbFindInFile: TCheckBox
+          AllowGrayed = True
+          AutoSize = True
+          Caption = 'Find in file'
+          DragCursor = 65524
+          OnClick = cbFindInFileClick
+          TabOrder = 5
+          Height = 30
+          Top = 120
+          Width = 217
+        end
+        object gbFindData: TGroupBox
+          Anchors = [akTop, akLeft, akRight]
+          Caption = 'Find Data'
+          ClientHeight = 88
+          ClientWidth = 317
+          Enabled = False
+          ParentColor = True
+          ParentCtl3D = False
+          TabOrder = 6
+          Height = 105
+          Top = 152
+          Width = 321
+          object cbCaseSens: TCheckBox
+            AllowGrayed = True
+            AutoSize = True
+            Caption = 'Case sensitive'
+            DragCursor = 65524
+            TabOrder = 0
+            Left = 16
+            Height = 30
+            Top = 56
+            Width = 129
+          end
+          object edtFindText: TEdit
+            Anchors = [akTop, akLeft, akRight]
+            TabOrder = 1
+            TabOrder = 1
+            Left = 16
+            Height = 24
+            Top = 24
+            Width = 277
+          end
+        end
+      end
+      object tsAdvanced: TTabSheet
+        Caption = 'Advanced'
+        ClientHeight = 283
+        ClientWidth = 491
+        ImageIndex = 1
+        Left = 2
+        Height = 283
+        Top = 28
+        Width = 491
+      end
+    end
+    object btnStart: TButton
+      Anchors = [akTop, akRight]
+      Caption = '&Start'
+      TabOrder = 1
+      OnClick = btnStartClick
+      Left = 376
+      Height = 25
+      Top = 87
+      Width = 75
+    end
+    object btnStop: TButton
+      Anchors = [akTop, akRight]
+      Enabled = False
+      Cancel = True
+      Caption = 'Cancel'
+      TabOrder = 2
+      OnClick = btnStopClick
+      Left = 376
+      Height = 25
+      Top = 151
+      Width = 75
+    end
+    object btnClose: TButton
+      Anchors = [akTop, akRight]
+      Caption = '&Close'
+      TabOrder = 3
+      OnClick = btnCloseClick
+      Left = 376
+      Height = 25
+      Top = 119
+      Width = 75
+    end
+  end
+  object Panel1: TPanel
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 199
+    ClientWidth = 495
+    FullRepaint = False
+    TabOrder = 1
+    Height = 199
+    Top = 314
+    Width = 495
+    object Panel3: TPanel
+      Align = alTop
+      BevelInner = bvRaised
+      BevelOuter = bvLowered
+      ClientHeight = 65
+      ClientWidth = 495
+      FullRepaint = False
+      TabOrder = 0
+      Height = 65
+      Width = 495
+      object lblStatus: TLabel
+        Caption = 'lblStatus'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'adobe-helvetica'
+        Font.Pitch = fpVariable
+        Font.Style = [fsBold]
+        Left = 392
+        Height = 16
+        Top = 12
+        Width = 96
+      end
+      object lblCurrent: TLabel
+        Caption = 'lblCurrent'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'adobe-helvetica'
+        Font.Pitch = fpVariable
+        Font.Style = [fsBold]
+        Left = 8
+        Height = 16
+        Top = 12
+        Width = 361
+      end
+    end
+    object lsFoundedFiles: TListBox
+      Align = alClient
+      MultiSelect = True
+      OnDblClick = lsFoundedFilesDblClick
+      PopupMenu = PopupMenuFind
+      TabOrder = 1
+      TopIndex = -1
+      Height = 134
+      Top = 65
+      Width = 495
+    end
+  end
+  object PopupMenuFind: TPopupMenu
+    left = 272
+    top = 400
+    object miShowInViewer: TMenuItem
+      Caption = 'Show In Viewer'
+      OnClick = miShowInViewerClick
+    end
+  end
+end

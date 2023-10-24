@@ -1,0 +1,38 @@
+body {
+	font-family : sans-serif;
+}
+
+#page {
+	width : 700px;
+}
+
+#menu {
+	float : left;
+	width : 200px;
+}
+
+#sclogo {
+	text-align : center;
+}
+
+#leftcontent {
+	width : 500px;
+	float : left;
+}
+
+#footer {
+	clear : both;
+	text-align : center;
+}
+
+span.credname {
+	font-weight : bold;
+}
+
+span.credmail {
+	color : #0000cc;
+}
+
+h1 {
+	text-align : center;
+}

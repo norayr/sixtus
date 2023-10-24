@@ -1,0 +1,135 @@
+object frmLinker: TfrmLinker
+  Caption = 'Linker'
+  ClientHeight = 347
+  ClientWidth = 315
+  Color = clBackground
+  HorzScrollBar.Page = 316
+  HorzScrollBar.Range = 289
+  VertScrollBar.Page = 348
+  VertScrollBar.Range = 331
+  Left = 277
+  Height = 347
+  Top = 163
+  Width = 315
+  object prbrWork: TProgressBar
+    Align = alBottom
+    DragCursor = 65524
+    Max = 100
+    TabOrder = 0
+    Height = 19
+    Top = 328
+    Width = 315
+  end
+  object gbSaveTo: TGroupBox
+    Caption = 'Save to...'
+    ClientHeight = 48
+    ClientWidth = 213
+    ParentColor = True
+    ParentCtl3D = False
+    TabOrder = 1
+    Height = 65
+    Top = 256
+    Width = 217
+    object edSave: TEdit
+      TabOrder = 0
+      TabOrder = 0
+      Left = 6
+      Height = 24
+      Top = 17
+      Width = 168
+    end
+    object btnSave: TButton
+      Caption = '...'
+      TabOrder = 1
+      OnClick = btnSaveClick
+      Left = 182
+      Height = 25
+      Top = 17
+      Width = 25
+    end
+    object lblFileName: TLabel
+      AutoSize = True
+      Caption = 'lblFileName'
+      Left = 6
+      Height = 15
+      Top = 1
+      Width = 77
+    end
+  end
+  object grbxControl: TGroupBox
+    Caption = 'Item'
+    ClientHeight = 232
+    ClientWidth = 84
+    ParentColor = True
+    ParentCtl3D = False
+    TabOrder = 2
+    Left = 224
+    Height = 249
+    Width = 88
+    object spbtnUp: TButton
+      Caption = 'Up'
+      TabOrder = 0
+      ParentShowHint = False
+      OnClick = spbtnUpClick
+      Left = 6
+      Height = 23
+      Hint = 'Up'
+      Top = 1
+      Width = 75
+    end
+    object spbtnDown: TButton
+      Caption = 'Down'
+      TabOrder = 1
+      ParentShowHint = False
+      OnClick = spbtnDownClick
+      Left = 6
+      Height = 23
+      Hint = 'Down'
+      Top = 33
+      Width = 75
+    end
+    object spbtnDel: TButton
+      Caption = 'Delete'
+      TabOrder = 2
+      ParentShowHint = False
+      OnClick = spbtnDelClick
+      Left = 6
+      Height = 23
+      Hint = 'Delete'
+      Top = 65
+      Width = 75
+    end
+  end
+  object btnOK: TButton
+    Caption = 'OK'
+    TabOrder = 3
+    OnClick = btnOKClick
+    Left = 227
+    Height = 25
+    Top = 262
+    Width = 88
+  end
+  object btnExit: TButton
+    ModalResult = 2
+    Caption = 'Exit'
+    TabOrder = 4
+    Left = 224
+    Height = 25
+    Top = 296
+    Width = 88
+  end
+  object lstFile: TListBox
+    TabOrder = 5
+    TopIndex = -1
+    Left = 2
+    Height = 248
+    Top = 8
+    Width = 212
+  end
+  object dlgSaveAll: TSaveDialog
+    Filter = 'All files|*.*'
+    FilterIndex = 0
+    left = 160
+    top = 240
+  end
+end

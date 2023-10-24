@@ -1,0 +1,148 @@
+object frmSplitter: TfrmSplitter
+  ActiveControl = edFileSource
+  Caption = 'Splitter'
+  ClientHeight = 244
+  ClientWidth = 371
+  Color = clBackground
+  TextHeight = 16
+  HorzScrollBar.Page = 372
+  HorzScrollBar.Range = 369
+  VertScrollBar.Page = 245
+  VertScrollBar.Range = 227
+  Left = 471
+  Height = 244
+  Top = 278
+  Width = 371
+  object prgbrDoIt: TProgressBar
+    DragCursor = 65524
+    Max = 100
+    TabOrder = 5
+    Height = 27
+    Top = 213
+    Width = 369
+  end
+  object grbxFile: TGroupBox
+    Caption = 'File name'
+    ClientHeight = 120
+    ClientWidth = 181
+    ParentColor = True
+    ParentCtl3D = False
+    TabOrder = 0
+    Height = 137
+    Width = 185
+    object edFileSource: TEdit
+      ReadOnly = True
+      TabOrder = 0
+      TabOrder = 0
+      Left = 6
+      Height = 23
+      Top = 33
+      Width = 144
+    end
+    object lbFileSource: TLabel
+      Caption = 'File source'
+      Left = 6
+      Height = 15
+      Top = 9
+      Width = 168
+    end
+    object edDirTarget: TEdit
+      TabOrder = 1
+      TabOrder = 1
+      Left = 6
+      Height = 23
+      Top = 89
+      Width = 144
+    end
+    object lbDirTarget: TLabel
+      Caption = 'Directory target'
+      Left = 6
+      Height = 15
+      Top = 65
+      Width = 168
+    end
+    object btnFTChoice: TButton
+      Caption = '...'
+      TabOrder = 2
+      OnClick = btnFTChoiceClick
+      Left = 158
+      Height = 23
+      Top = 89
+      Width = 19
+    end
+  end
+  object grbxSize: TGroupBox
+    Caption = 'File size'
+    ClientHeight = 48
+    ClientWidth = 181
+    ParentColor = True
+    ParentCtl3D = False
+    TabOrder = 1
+    Height = 65
+    Top = 144
+    Width = 185
+    object cmbxSize: TComboBox
+      ItemHeight = 18
+      Items.Strings = (
+        '1457664B - 3.5"'
+        '98078KB - ZIP 100MB'
+        '650MB - CD 650MB'
+        '700MB - CD 700MB'
+      )
+      MaxLength = 0
+      ParentCtl3D = False
+      TabOrder = 0
+      Text = '1457664B - 3.5"'
+      Left = 6
+      Height = 23
+      Top = 9
+      Width = 168
+    end
+  end
+  object grbxWatch: TGroupBox
+    Caption = 'Watchtower'
+    ClientHeight = 160
+    ClientWidth = 173
+    ParentColor = True
+    ParentCtl3D = False
+    TabOrder = 2
+    Left = 192
+    Height = 177
+    Width = 177
+    object memWatch: TMemo
+      Color = clBlack
+      Font.Color = clYellow
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      Tabstop = False
+      WordWrap = False
+      TabStop = False
+      TabOrder = 0
+      Left = 6
+      Height = 138
+      Top = 9
+      Width = 161
+    end
+  end
+  object btnOK: TButton
+    Caption = 'OK'
+    TabOrder = 3
+    OnClick = btnOKClick
+    Left = 192
+    Height = 25
+    Top = 184
+    Width = 75
+  end
+  object btnCancel: TButton
+    ModalResult = 2
+    Caption = 'Exit'
+    TabOrder = 4
+    Left = 288
+    Height = 25
+    Top = 184
+    Width = 75
+  end
+end

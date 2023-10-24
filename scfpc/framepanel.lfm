@@ -1,0 +1,178 @@
+object FrameFilePanel: TFrameFilePanel
+  Caption = 'FrameFilePanel'
+  ClientHeight = 415
+  ClientWidth = 349
+  HorzScrollBar.Page = 350
+  VertScrollBar.Page = 416
+  Left = 456
+  Height = 415
+  Top = 231
+  Width = 349
+  object pnPanel: TPanel
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 415
+    ClientWidth = 349
+    FullRepaint = False
+    TabOrder = 0
+    Height = 415
+    Width = 349
+    object lblLInfo: TLabel
+      Caption = 'lblLInfo'
+      Height = 17
+      Width = 65
+    end
+    object pnlHeader: TPanel
+      Align = alTop
+      BevelInner = bvLowered
+      ClientHeight = 41
+      ClientWidth = 349
+      FullRepaint = False
+      TabOrder = 1
+      OnResize = pnlHeaderResize
+      Height = 41
+      Width = 349
+      object btnRoot: TSpeedButton
+        Anchors = [akTop]
+        Caption = '/'
+        Flat = True
+        NumGlyphs = 0
+        OnClick = btnRootClick
+        Left = 166
+        Height = 20
+        Top = 20
+        Width = 17
+      end
+      object btnHome: TSpeedButton
+        Anchors = [akTop]
+        Caption = '~'
+        Flat = True
+        NumGlyphs = 0
+        OnClick = btnHomeClick
+        Left = 166
+        Height = 20
+        Top = 19
+        Width = 17
+      end
+      object btnUp: TSpeedButton
+        Caption = '..'
+        Flat = True
+        NumGlyphs = 0
+        OnClick = btnUpClick
+        Left = 320
+        Height = 20
+        Top = 20
+        Width = 17
+      end
+      object lblLPath: TLabel
+        Align = alTop
+        Caption = 'lblLPath'
+        Color = clBackground
+        Left = 2
+        Height = 17
+        Top = 2
+        Width = 345
+      end
+      object lblFree: TLabel
+        Align = alLeft
+        Caption = 'lblFree'
+        Left = 2
+        Height = 20
+        Top = 19
+        Width = 65
+      end
+    end
+    object edtRename: TEdit
+      OnKeyPress = edtRenameKeyPress
+      TabOrder = 2
+      Visible = False
+      TabOrder = 2
+      Height = 1
+      Width = 1
+    end
+    object dgPanel: TDrawGrid
+      Align = alClient
+      AutoAdvance = aaDown
+      Color = clWhite
+      ColCount = 5
+      DefaultColWidth = 64
+      DefaultDrawing = False
+      DefaultRowHeight = 16
+      FixedColor = clBtnFace
+      FixedCols = 0
+      FixedRows = 0
+      GridLineWidth = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect]
+      RowCount = 5
+      ScrollBars = ssAutoBoth
+      TabOrder = 4
+      VisibleColCount = 5
+      VisibleRowCount = 5
+      OnClick = dgPanelClick
+      OnColRowMoved = dgPanelColRowMoved
+      OnDblClick = dgPanelDblClick
+      OnDrawCell = dgPanelDrawCell
+      OnEnter = dgPanelEnter
+      OnExit = dgPanelExit
+      OnHeaderClick = dgPanelHeaderClick
+      OnKeyDown = dgPanelKeyDown
+      OnKeyPress = dgPanelKeyPress
+      OnPrepareCanvas = dgPanelPrepareCanvas
+      Height = 344
+      Top = 41
+      Width = 349
+      ColWidths = (
+        64
+        64
+        64
+        64
+        64
+      )
+      RowHeights = (
+        16
+        16
+        16
+        16
+        16
+      )
+    end
+    object pnAltSearch: TPanel
+      Alignment = taLeftJustify
+      Caption = ' Find:'
+      ClientHeight = 29
+      ClientWidth = 185
+      FullRepaint = False
+      TabOrder = 3
+      Visible = False
+      Left = 8
+      Height = 29
+      Top = 336
+      Width = 185
+      object edSearch: TEdit
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        OnChange = edSearchChange
+        OnExit = edSearchExit
+        OnKeyPress = edSearchKeyPress
+        TabOrder = 0
+        TabOrder = 0
+        Left = 64
+        Height = 24
+        Top = 2
+        Width = 118
+      end
+    end
+    object pnlFooter: TPanel
+      Align = alBottom
+      Anchors = [akLeft, akRight]
+      Caption = 'pnlFooter'
+      ClientHeight = 30
+      ClientWidth = 349
+      FullRepaint = False
+      TabOrder = 5
+      TabStop = True
+      Height = 30
+      Top = 385
+      Width = 349
+    end
+  end
+end
