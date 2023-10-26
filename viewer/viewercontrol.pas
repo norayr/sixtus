@@ -52,8 +52,8 @@ type
     FTempName: String;
     
     FViewerMode:TViewerMode;
-    FFileHandle:Integer;
-    FFileSize:Integer;
+    FFileHandle:System.THandle;
+    FFileSize:QWord;
     FMappedFile:PChar;
     FPosition: Integer;
     FLineList:TList;
@@ -109,7 +109,7 @@ type
     { Published declarations }
     property ViewerMode:TViewerMode read FViewerMode write SetViewerMode;
     property Position:Integer read FPosition write SetPosition;
-    property FileSize:Integer read FFileSize;
+    property FileSize:QWord read FFileSize;
     property OnMouseMove;
     property OnClick;
     property OnMouseDown;
@@ -126,7 +126,7 @@ procedure Register;
 
 implementation
 uses
-  Clipbrd, unix, Libc;
+  Clipbrd, unix, BaseUnix;
 
 const
   cTextWidth=80;  // wrap on 80 chars
@@ -400,26 +400,26 @@ end;
 
 Function TViewerControl.MapFile(const sFileName:String):Boolean;
 var
-  stat:TStatBuf;
+  stat: BaseUnix.Stat;
 begin
   Result:=False;
   if assigned(FMappedFile) then
     UnMapFile; // if needed
-  FFileHandle:=Libc.open(PChar(sFileName), O_RDONLY);
+  FFileHandle:=SysUtils.FileOpen(sFileName, fmOpenRead);
   writeln('Trying map:'+sFileName);
   if FFileHandle=-1 then Exit;
-  if fstat(FFileHandle, stat) <> 0 then
+  if BaseUnix.FPFStat(FFileHandle, stat) <> 0 then
   begin
-    Libc.__close(FFileHandle);
+    SysUtils.FileClose(FFileHandle);
     Exit;
   end;
 
   FFileSize := stat.st_size;
-  FMappedFile:=mmap(nil,FFileSize,PROT_READ, MAP_PRIVATE{SHARED},FFileHandle,0 );
+  FMappedFile:= BaseUnix.FPmmap(nil,FFileSize,PROT_READ, MAP_PRIVATE{SHARED},FFileHandle,0 );
   if Integer(FMappedFile)=-1 then
   begin
     FMappedFile:=nil;
-    Libc.__close(FFileHandle);
+    SysUtils.FileClose(FFileHandle);
     writeln('failed > try throught cat+stdin');
     if FTempName<>'' then
     begin
@@ -446,8 +446,8 @@ begin
     FTempName:='';
   end;
   if not assigned(FMappedFile) then Exit;
-  Libc.__close(FFileHandle);
-  munmap(FMappedFile,FFileSize);
+  SysUtils.FileClose(FFileHandle);
+  BaseUnix.FPmunmap(FMappedFile, FFileSize);
   FMappedFile:=nil;
   writeln('Unmap file done');
 end;
@@ -653,7 +653,7 @@ begin
   begin
     // out of selection, draw normal
 //    Canvas.Font.Color:=clYellow; // test
-    Canvas.Font.Color:=clText;
+    Canvas.Font.Color:=clBlack;
 //    Canvas.TextRect(ARect, x, y,sText); //!!!
     Canvas.TextOut(x, y,sText);
     Exit;
@@ -663,7 +663,7 @@ begin
   begin
 // begin line, not selected
 //    Canvas.Font.Color:=clBlue; // test
-    Canvas.Font.Color:=clText;
+    Canvas.Font.Color:=clBlack;
 //    Canvas.TextRect(ARect, x, y,Copy(sText,1,FBlockBeg-pBegLine-1)); //!!!
     Canvas.TextOut(x, y,Copy(sText,1,FBlockBeg-pBegLine-1));
   end;
@@ -685,7 +685,7 @@ begin
 
     Canvas.FillRect(Rect(x+(iBegDrawIndex-pBegLine-1)*FTextWidth, y, x+(iEndDrawIndex-pBegLine)*FTextWidth, y+FTextHeight));
 //   Canvas.Font.Color:=clRed; // test
-    Canvas.Font.Color:=clLight;
+    Canvas.Font.Color:=clYellow;
 //    Canvas.TextRect(ARect, x+(iBegDrawIndex-pBegLine-1)*FTextWidth, y,Copy(sText,iBegDrawIndex-pBegLine,iEndDrawIndex-iBegDrawIndex+1));!!!
     Canvas.TextOut(x+(iBegDrawIndex-pBegLine-1)*FTextWidth, y,Copy(sText,iBegDrawIndex-pBegLine,iEndDrawIndex-iBegDrawIndex+1));
   end
@@ -693,7 +693,7 @@ begin
   begin
     Canvas.FillRect(Rect(x+(iBegDrawIndex-pBegLine)*FTextWidth, y, x+(iEndDrawIndex-pBegLine)*FTextWidth, y+FTextHeight));
 //    Canvas.Font.Color:=clMaroon; // test
-    Canvas.Font.Color:=clLight;
+    Canvas.Font.Color:=clYellow;
 //    Canvas.TextRect(ARect, x+(iBegDrawIndex-pBegLine)*FTextWidth, y,Copy(sText,iBegDrawIndex-pBegLine,iEndDrawIndex-iBegDrawIndex));
     Canvas.TextOut(x+(iBegDrawIndex-pBegLine)*FTextWidth, y,Copy(sText,iBegDrawIndex-pBegLine,iEndDrawIndex-iBegDrawIndex));
   end;
@@ -701,7 +701,7 @@ begin
   begin
 // end of line, not selected
 //    Canvas.Font.Color:=clGreen; // test
-    Canvas.Font.Color:=clText;
+    Canvas.Font.Color:=clBlack;
 //    Canvas.TextRect(ARect, x+(FBlockEnd-pBegLine)*FTextWidth, y,Copy(sText,FBlockEnd-pBegLine+1,pEndLine-FBlockEnd));
     Canvas.TextOut(x+(FBlockEnd-pBegLine)*FTextWidth, y,Copy(sText,FBlockEnd-pBegLine+1,pEndLine-FBlockEnd));
 

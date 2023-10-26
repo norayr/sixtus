@@ -7,16 +7,6 @@ unit viewerpackage;
 {$warn 5023 off : no warning about unused units}
 interface
 
-uses
-  viewercontrol, LazarusPackageIntf;
-
 implementation
 
-procedure Register;
-begin
-  RegisterUnit('viewercontrol', @viewercontrol.Register);
-end;
-
-initialization
-  RegisterPackage('viewerpackage', @Register);
 end.
