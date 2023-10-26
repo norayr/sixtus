@@ -1,22 +1,22 @@
 { This file was automatically created by Lazarus. Do not edit!
-  This source is only used to compile and install
-  the package viewerpackage 1.0.
-}
+  This source is only used to compile and install the package.
+ }
 
-unit viewerpackage; 
+unit viewerpackage;
 
+{$warn 5023 off : no warning about unused units}
 interface
 
 uses
-  viewercontrol, LazarusPackageIntf; 
+  viewercontrol, LazarusPackageIntf;
 
 implementation
 
-procedure Register; 
+procedure Register;
 begin
-  RegisterUnit('viewercontrol', @viewercontrol.Register); 
-end; 
+  RegisterUnit('viewercontrol', @viewercontrol.Register);
+end;
 
 initialization
-  RegisterPackage('viewerpackage', @Register)
+  RegisterPackage('viewerpackage', @Register);
 end.
